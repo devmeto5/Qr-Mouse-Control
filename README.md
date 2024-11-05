@@ -1,3 +1,27 @@
+# Mouse Control via QR Code - Step-by-Step Instructions
+
+This README provides detailed instructions on how to set up and use a script that allows you to control your computer's mouse using your phone by scanning a QR code.
+
+## Requirements
+
+- Python 3 installed on your computer
+- A local network that connects both your phone and computer
+
+## Step 1: Install Required Libraries
+
+Open your terminal or command prompt and install the required Python libraries:
+
+```bash
+pip install Flask pyautogui qrcode
+```
+
+These libraries are needed to create the web server (`Flask`), control the mouse (`pyautogui`), and generate a QR code (`qrcode`).
+
+## Step 2: Create the Python Script
+
+Create a new file called `mouse_control_server.py` and copy the following script into it:
+
+```python
 import pyautogui
 from flask import Flask, request, jsonify, render_template_string
 import qrcode
@@ -192,3 +216,38 @@ if __name__ == '__main__':
 
     # Start the Flask server
     app.run(host='0.0.0.0', port=5000)
+```
+
+## Step 3: Start the Server
+
+Open your terminal, navigate to the directory where you saved `mouse_control_server.py`, and run the script:
+
+```bash
+python mouse_control_server.py
+```
+
+A QR code will be generated and saved as `server_qr_code.png`. This QR code contains a link to the web interface for controlling the mouse.
+
+## Step 4: Connect Using Your Phone
+
+1. Open a QR code scanner on your phone and scan the `server_qr_code.png` file.
+2. The QR code will redirect you to a webpage (e.g., `http://<your-ip-address>:5000`).
+3. Open the link in your phone's browser.
+
+## Step 5: Control the Mouse
+
+You can now use the interface on your phone to control the mouse cursor on your computer.
+
+- **Touchpad**: Move your finger over the touchpad area to move the cursor.
+- **Buttons**: Tap the left or right button to perform left or right mouse clicks.
+
+## Troubleshooting
+
+- Ensure your computer and phone are connected to the same local network.
+- Ensure Python 3 and all required libraries are installed correctly.
+- If the script fails to start, check for errors in the terminal output.
+
+## Conclusion
+
+With this setup, you can remotely control your computer's mouse using your phone. This simple project demonstrates how easily different devices can interact with each other over a local network.
+
