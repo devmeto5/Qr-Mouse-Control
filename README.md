@@ -1,6 +1,6 @@
 # Mouse Control via QR Code - Step-by-Step Instructions
 
-This README provides detailed instructions on how to set up and use a script that allows you to control your computer's mouse using your phone by scanning a QR code.
+This README provides detailed instructions on how to set up and use a script that allows you to control your computer's mouse using your phone by scanning a QR code
 
 ## Requirements
 
